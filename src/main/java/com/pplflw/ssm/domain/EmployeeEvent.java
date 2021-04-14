@@ -1,5 +1,5 @@
 package com.pplflw.ssm.domain;
 
 public enum EmployeeEvent {
-    ADD, ACTIVATE, ADDED, ACTIVATED, DECLINE_ACTIVATE
+    ACTIVATE, ADD, CHECK, DECLINE_ACTIVATE
 }

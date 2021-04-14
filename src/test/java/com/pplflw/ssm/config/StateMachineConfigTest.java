@@ -3,15 +3,21 @@ package com.pplflw.ssm.config;
 import com.pplflw.ssm.domain.EmployeeEvent;
 import com.pplflw.ssm.domain.EmployeeState;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.statemachine.StateMachine;
 import org.springframework.statemachine.config.StateMachineFactory;
 
 import java.util.UUID;
+
 @SpringBootTest
+@Configuration
+@EnableAutoConfiguration
+@ComponentScan
 class StateMachineConfigTest {
-    @Autowired
+    /* @Autowired */
     StateMachineFactory<EmployeeState, EmployeeEvent> factory;
 
     @Test
@@ -26,7 +32,7 @@ class StateMachineConfigTest {
 
         System.out.println(theStateMachine.getState().toString());
 
-        theStateMachine.sendEvent(EmployeeEvent.ADDED);
+        theStateMachine.sendEvent(EmployeeEvent.CHECK);
 
         System.out.println(theStateMachine.getState().toString());
 
@@ -38,9 +44,6 @@ class StateMachineConfigTest {
 
         System.out.println(theStateMachine.getState().toString());
 
-        theStateMachine.sendEvent(EmployeeEvent.ACTIVATED);
-
-        System.out.println(theStateMachine.getState().toString());
 
     }
 }

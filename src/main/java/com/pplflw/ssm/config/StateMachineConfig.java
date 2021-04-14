@@ -30,13 +30,14 @@ public class StateMachineConfig extends StateMachineConfigurerAdapter<EmployeeSt
     public void configure(StateMachineTransitionConfigurer<EmployeeState, EmployeeEvent> transitions) throws Exception {
         transitions
                 .withExternal()
-                .source(EmployeeState.ADD)
-                .target(EmployeeState.ADDED)
-                .event(EmployeeEvent.ADD)
+                .source(EmployeeState.IN_CHECK)
+                .target(EmployeeState.APPROVED)
+                .event(EmployeeEvent.CHECK)
                 .and()
                 .withExternal()
-                .source(EmployeeState.ADDED).target(EmployeeState.IN_CHECK)
-                .event(EmployeeEvent.ADDED);
+                .source(EmployeeState.APPROVED).
+                target(EmployeeState.ACTIVE)
+                .event(EmployeeEvent.ACTIVATE);
     }
 
     @Override
@@ -44,7 +45,7 @@ public class StateMachineConfig extends StateMachineConfigurerAdapter<EmployeeSt
         StateMachineListenerAdapter<EmployeeState, EmployeeEvent> adapter = new StateMachineListenerAdapter<>() {
             @Override
             public void stateChanged(State<EmployeeState, EmployeeEvent> from, State<EmployeeState, EmployeeEvent> to) {
-                log.info(String.format("stateChanged(from: %s, to: %s)", from, to));
+                log.info(String.format("===>> stateChanged(from: %s, to: %s)", from, to));
             }
         };
 
