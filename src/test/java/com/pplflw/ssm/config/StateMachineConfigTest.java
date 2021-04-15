@@ -3,6 +3,7 @@ package com.pplflw.ssm.config;
 import com.pplflw.ssm.domain.EmployeeEvent;
 import com.pplflw.ssm.domain.EmployeeState;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.ComponentScan;
@@ -17,7 +18,7 @@ import java.util.UUID;
 @EnableAutoConfiguration
 @ComponentScan
 class StateMachineConfigTest {
-    /* @Autowired */
+    @Autowired
     StateMachineFactory<EmployeeState, EmployeeEvent> factory;
 
     @Test

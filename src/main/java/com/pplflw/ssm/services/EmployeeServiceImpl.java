@@ -32,15 +32,16 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public StateMachine<EmployeeState, EmployeeEvent> checkEmployee(Long employeeId) {
         StateMachine<EmployeeState, EmployeeEvent> theStateMachine = build(employeeId);
+        theEmployeeRepository.getOne(employeeId).setState(EmployeeState.IN_CHECK);
         sendEvent(employeeId,theStateMachine,EmployeeEvent.CHECK);
-        return null;
+        return theStateMachine;
     }
     @Transactional
     @Override
     public StateMachine<EmployeeState, EmployeeEvent> approveEmployee(Long employeeId) {
         StateMachine<EmployeeState, EmployeeEvent> theStateMachine = build(employeeId);
         sendEvent(employeeId,theStateMachine,EmployeeEvent.ACTIVATE);
-        return null;
+        return theStateMachine;
     }
 
     private void sendEvent(Long theEmployeeId, StateMachine<EmployeeState, EmployeeEvent> theStataMachine, EmployeeEvent theEmployeeEvent){
