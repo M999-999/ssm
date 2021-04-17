@@ -1,5 +1,5 @@
 # ssm
-Spring State Machine
+Spring State Machine https://travis-ci.com/M999-999/ssm.svg?branch=master
 
 Requirements are:
 
