@@ -3,7 +3,7 @@ Spring State Machine
 
 Ci Travis status [![Build Status](https://travis-ci.com/M999-999/ssm.svg?branch=master)](https://travis-ci.com/M999-999/ssm)
 
-Added codecov
+Codecov status [![codecov](https://codecov.io/gh/M999-999/ssm/branch/master/graph/badge.svg?token=3AJUSXSDFR)](https://codecov.io/gh/M999-999/ssm)
 
 Requirements are:
 
