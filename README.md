@@ -1,5 +1,7 @@
 # ssm
-Spring State Machine https://travis-ci.com/M999-999/ssm.svg?branch=master
+Spring State Machine
+[![Build Status](https://travis-ci.org/codecov/example-java.svg?branch=master)](https://travis-ci.org/codecov/example-java)
+[![Build Status](https://travis-ci.com/M999-999/ssm.svg?branch=master)](https://travis-ci.com/M999-999/ssm)
 
 Requirements are:
 
