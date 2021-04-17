@@ -1,3 +1,10 @@
 language: java
 before_install:
   - chmod +x mvnw
+
+notifications:
+  email:
+    recipients:
+      - mig29mig29@gmail.com
+    on_success: always # default: change /never
+    on_failure: always # default: always
