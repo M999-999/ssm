@@ -28,6 +28,7 @@ class StateMachineConfigTest {
         theStateMachine.start();
 
         System.out.println(theStateMachine.getState().toString());
+        System.out.println(theStateMachine.getState().toString());
 
         theStateMachine.sendEvent(EmployeeEvent.ADD);
 
