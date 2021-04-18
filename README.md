@@ -5,11 +5,10 @@ Ci Travis status [![Build Status](https://travis-ci.com/M999-999/ssm.svg?branch=
 
 Codecov status [![codecov](https://codecov.io/gh/M999-999/ssm/branch/master/graph/badge.svg?token=3AJUSXSDFR)](https://codecov.io/gh/M999-999/ssm)
 
-![Mozilla Add-on](https://img.shields.io/amo/dw/M999-999/ssm)
-![Mozilla Add-on](https://img.shields.io/amo/users/M999-999/ssm)
-![Mozilla Add-on](https://img.shields.io/amo/dw/!%5BMozilla%20Add-on%5D(https://img.shields.io/amo/users/M999-999/ssm)?label=SSM%20Downloads&style=plastic)
-![Mozilla Add-on](https://img.shields.io/amo/dw/!%5BMozilla%20Add-on%5D(https://img.shields.io/amo/users/M999-999/ssm)?style=plastic)
-![Mozilla Add-on](https://img.shields.io/amo/users/M999-999/ssm?style=plastic)
+GitHub  ![GitHub commit activity](https://img.shields.io/github/commit-activity/w/M999-999/ssm?style=plastic)
+
+GitHub ![GitHub last commit](https://img.shields.io/github/last-commit/M999-999/ssm?style=plastic)
+
 
 
 Requirements are:
