@@ -5,6 +5,13 @@ Ci Travis status [![Build Status](https://travis-ci.com/M999-999/ssm.svg?branch=
 
 Codecov status [![codecov](https://codecov.io/gh/M999-999/ssm/branch/master/graph/badge.svg?token=3AJUSXSDFR)](https://codecov.io/gh/M999-999/ssm)
 
+![Mozilla Add-on](https://img.shields.io/amo/dw/M999-999/ssm)
+![Mozilla Add-on](https://img.shields.io/amo/users/M999-999/ssm)
+![Mozilla Add-on](https://img.shields.io/amo/dw/!%5BMozilla%20Add-on%5D(https://img.shields.io/amo/users/M999-999/ssm)?label=SSM%20Downloads&style=plastic)
+![Mozilla Add-on](https://img.shields.io/amo/dw/!%5BMozilla%20Add-on%5D(https://img.shields.io/amo/users/M999-999/ssm)?style=plastic)
+![Mozilla Add-on](https://img.shields.io/amo/users/M999-999/ssm?style=plastic)
+
+
 Requirements are:
 
 PeopleFlow (www.pplflw.com) is a global HR platform enabling companies to hire & onboard their employees internationally, at the push of a button. It is our mission to create opportunities for anyone to work from anywhere. As work is becoming even more global and remote, there has never been a bigger chance to build a truly global HR-tech company.
@@ -64,3 +71,19 @@ Another Team in the company is building another service, This service will be us
 - Please think of a solution without any further implementation that could be able to integrate on top of your service, including the integration pattern will be used, the database storage etc.
 
 A high-level architecture diagram is sufficient to present this.
++++
++++
+The application is written for Java 11 and uses an in-memory H2 database, so doesn't require any additional actions to start, except building a jar and execution of the command to start. Also used default port 8080
+
+How to run with Java 11:
+```shell script
+mvn clean install
+java -jar target/ssm-0.0.1-SNAPSHOT.jar
+```
+
+How to run with Docker:
+```shell script
+mvn clean install
+docker build --build-arg=target/ssm-0.0.1-SNAPSHOT.jar -t ssm-0.0.1-SNAPSHOT .
+docker run -p 8080:8080 ssm-0.0.1-SNAPSHOT
+
