@@ -9,7 +9,11 @@ GitHub  ![GitHub commit activity](https://img.shields.io/github/commit-activity/
 
 GitHub ![GitHub last commit](https://img.shields.io/github/last-commit/M999-999/ssm?style=plastic)
 
+FOSSA [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FM999-999%2Fssm.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FM999-999%2Fssm?ref=badge_shield)
+FOSSA Live Project Report latest report ( license checks) https://app.fossa.com/reports/04eddb44-c0e5-424b-96c8-e11453989362
+FOSSA ran license checks across 77 dependencies. https://app.fossa.com/projects/git%2Bgithub.com%2FM999-999%2Fssm?utm_source=share_link
 
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FM999-999%2Fssm.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FM999-999%2Fssm?ref=badge_large)
 
 Requirements are:
 
@@ -59,7 +63,46 @@ Being concerned about developing high quality, resilient software, giving the fa
 - Suggest what will be your silver bullet, concerns while you're reviewing this part of the software that you need to make sure is being there.
 - What the production-readiness criteria that you consider for this solution
 
+`
+Absolute minimum is being there:
+Source code,
+Tests code,
+Maven,CI\CD, Docker etc scripts.
 
+Nevertheless
+Production-readiness criteria list is not so short.
+Below is the Production-readiness criteria list but it is not complete and
+could be updated.
+1.Correctly implemented business requirement (or fix reported\discovered issue)
+( User Acceptance that system meets all required needs,
+Passed all quality tests related to functionality requirements.)
+2.Use best practice in implementing solution (appropriate patterns etc)
+3.Comply Project coding standarts (naming convention\formatting style\documentation(comments))
+4.Comply Project logging & monitoring standarts ( Kibana, DataDog, Relic etc.)
+5.Pass automatic CI review (Travis CI etc).
+6.Covered by tests according Project policy.
+7.Pass automated tests.
+8.Pass team member code review.
+9.Pass vulnerability security review & testing (Veracode, Codacy, Sonarqube)
+(Security Review includes completed and mitigated Vulnerability Scans and if required Penetration tests)
+-Injection
+--XML Injection (aka Blind XPath Injection)
+--‘NoSQL injection’
+--‘SQL Injection’
+-Broken authentication
+-Sensitive data exposure
+-Cross-site scripting (XSS)
+-Insecure deserialization.
+10.Pass dependencies vulnerabilities check (not used components with known vulnerabilities)
+11.Validate Docs\Readme etc documentation related to this solution is up to date
+12.Check that Production environments properly configured and tested
+13.Check that Hardware/software requirements documented
+14.Check that Problem resolution process (troubleshooting) in place
+15.Privacy & Regulatory data have been identified and system complies with
+privacy and regulatory requirements.
+16.Problem resolution process (troubleshooting) in place
+17.Check that Synthetic transactions/ smoke tests complete
+`
 
 
 
