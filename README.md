@@ -2,6 +2,7 @@
 Spring State Machine
 
 Ci Travis status [![Build Status](https://travis-ci.com/M999-999/ssm.svg?branch=master)](https://travis-ci.com/M999-999/ssm)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FM999-999%2Fssm.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FM999-999%2Fssm?ref=badge_shield)
 
 Codecov status [![codecov](https://codecov.io/gh/M999-999/ssm/branch/master/graph/badge.svg?token=3AJUSXSDFR)](https://codecov.io/gh/M999-999/ssm)
 
@@ -86,3 +87,7 @@ mvn clean install
 docker build --build-arg=target/ssm-0.0.1-SNAPSHOT.jar -t ssm-0.0.1-SNAPSHOT .
 docker run -p 8080:8080 ssm-0.0.1-SNAPSHOT
 
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FM999-999%2Fssm.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FM999-999%2Fssm?ref=badge_large)
