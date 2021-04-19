@@ -4,6 +4,7 @@ import com.pplflw.ssm.domain.Employee;
 import com.pplflw.ssm.domain.EmployeeEvent;
 import com.pplflw.ssm.domain.EmployeeState;
 import com.pplflw.ssm.repository.EmployeeRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.statemachine.StateMachine;
 import org.springframework.transaction.annotation.Transactional;
 @SpringBootTest
+@Slf4j
 class EmployeeServiceImplTest {
 @Autowired
 EmployeeService theEmployeeService;
@@ -29,20 +31,16 @@ Employee theEmployee;
     void checkEmployee() {
         if(theEmployee!=null && theEmployeeService!=null) {
             Employee theAddedEmployee = theEmployeeService.addNewEmployee(theEmployee);
-            System.out.println("===>>>>theAddedEmployee getState()");
-            System.out.println(theAddedEmployee.getState());
+            log.info("===>>>>theAddedEmployee getState()={}",theAddedEmployee.getState());
 
             StateMachine<EmployeeState, EmployeeEvent> theStateMachine
                     = theEmployeeService.checkEmployee(theAddedEmployee.getId());
             Employee theCheckedEmployee = theEmployeeRepository.getOne(theAddedEmployee.getId());
-            System.out.println("===>>>>theCheckedEmployee=");
-            //System.out.println(theCheckedEmployee.getId());
-            System.out.println(theCheckedEmployee.getState());
+            log.info("===>>>>theCheckedEmployee.getState()={}",theCheckedEmployee.getState());
+            log.info("===>>>>theStateMachine.getState().getId()=={} ",theStateMachine.getState().getId());
 
-            System.out.println("===>>>>theStateMachine.getState().getId() ");
-            System.out.println(theStateMachine.getState().getId());
         }else{
-            System.out.println("===>>>>theAddedEmployee || theEmployeeService is\\are NULL");
+            log.info("===>>>>theAddedEmployee || theEmployeeService is\\are NULL");
         }
 
     }

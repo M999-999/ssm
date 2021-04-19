@@ -41,9 +41,9 @@ public class EmployeeLoader implements CommandLineRunner {
             nuts.setId(123L);
 
             employeeRepository.save(nuts);
-            log.debug("Employee getId={}", nuts.getId());
+            log.info("Employee getId={}", nuts.getId());
 
-            log.debug("Created Employee={}", employeeRepository.count());
+            log.info("Created Employee={}", employeeRepository.count());
         }
         log.info("employeeRepository.count()={}", employeeRepository.count());
     }

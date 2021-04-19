@@ -2,6 +2,7 @@ package com.pplflw.ssm.config;
 
 import com.pplflw.ssm.domain.EmployeeEvent;
 import com.pplflw.ssm.domain.EmployeeState;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.statemachine.config.EnableStateMachineFactory;
@@ -15,8 +16,10 @@ import org.springframework.statemachine.state.State;
 import java.util.EnumSet;
 
 @Slf4j
+@RequiredArgsConstructor
 @EnableStateMachineFactory
 @Configuration
+
 public class StateMachineConfig extends StateMachineConfigurerAdapter<EmployeeState, EmployeeEvent> {
     @Override
     public void configure(StateMachineStateConfigurer<EmployeeState, EmployeeEvent> states) throws Exception {
