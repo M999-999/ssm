@@ -10,17 +10,19 @@ GitHub  ![GitHub commit activity](https://img.shields.io/github/commit-activity/
 GitHub ![GitHub last commit](https://img.shields.io/github/last-commit/M999-999/ssm?style=plastic)
 
 FOSSA [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FM999-999%2Fssm.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FM999-999%2Fssm?ref=badge_shield)
-FOSSA Live Project Report latest report ( license checks) https://app.fossa.com/reports/04eddb44-c0e5-424b-96c8-e11453989362
-FOSSA ran license checks across 77 dependencies. https://app.fossa.com/projects/git%2Bgithub.com%2FM999-999%2Fssm?utm_source=share_link
+
+FOSSA [Live Project Report latest report ( license checks)](https://app.fossa.com/reports/04eddb44-c0e5-424b-96c8-e11453989362)
+
+FOSSA [ran license checks across 77 dependencies](https://app.fossa.com/projects/git%2Bgithub.com%2FM999-999%2Fssm?utm_source=share_link)
 
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FM999-999%2Fssm.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FM999-999%2Fssm?ref=badge_large)
 
 Requirements are:
 
-PeopleFlow (www.pplflw.com) is a global HR platform enabling companies to hire & onboard their employees internationally, at the push of a button. It is our mission to create opportunities for anyone to work from anywhere. As work is becoming even more global and remote, there has never been a bigger chance to build a truly global HR-tech company.
+[PeopleFlow](www.pplflw.com) is a global HR platform enabling companies to hire & onboard their employees internationally, at the push of a button. It is our mission to create opportunities for anyone to work from anywhere. As work is becoming even more global and remote, there has never been a bigger chance to build a truly global HR-tech company.
 
 
-As a part of our backend engineering team, you will be responsible for building our core platform including an  employees managment system.
+As a part of our backend engineering team, you will be responsible for building our core platform including an employees management system.
 
 The employees on this system are assigned to different states, Initially when an employee is added it will be assigned "ADDED" state automatically .
 
@@ -41,13 +43,13 @@ Our backend stack is:
 
 
 Your task is to build  Restful API doing the following:
-- An Endpoint to support adding an employee with very basic employee details including (name, contract information, age, you can decide.) With initial state "ADDED" which incidates that the employee isn't active yet.
+- An Endpoint to support adding an employee with very basic employee details including (name, contract information, age, you can decide.) With initial state "ADDED" which indicates that the employee isn't active yet.
 
 - Another endpoint to change the state of a given employee to "In-CHECK" or any of the states defined above in the state machine 
 
 Please provide a solution with the  above features with the following consideration.
 
-- Being simply executable with the least effort Ideally using Docker and docker-compose or any smailiar approach.
+- Being simply executable with the least effort Ideally using Docker and docker-compose or any similar approach.
 - For state machine could be as simple as of using ENUM or by using https://projects.spring.io/spring-statemachine/ 
 - Please provide testing for your solution.
 - Providing an API Contract e.g. OPENAPI spec. is a big plus
@@ -69,16 +71,16 @@ Source code,
 Tests code,
 Maven,CI\CD, Docker etc scripts.
 
-Nevertheless
-Production-readiness criteria list is not so short.
+Nevertheless,
+the Production-readiness criteria list is not so short.
 Below is the Production-readiness criteria list but it is not complete and
 could be updated.
 1.Correctly implemented business requirement (or fix reported\discovered issue)
 ( User Acceptance that system meets all required needs,
 Passed all quality tests related to functionality requirements.)
 2.Use best practice in implementing solution (appropriate patterns etc)
-3.Comply Project coding standarts (naming convention\formatting style\documentation(comments))
-4.Comply Project logging & monitoring standarts ( Kibana, DataDog, Relic etc.)
+3.Comply Project coding standards (naming convention\formatting style\documentation(comments))
+4.Comply Project logging & monitoring standards ( Kibana, DataDog, Relic etc.)
 5.Pass automatic CI review (Travis CI etc).
 6.Covered by tests according Project policy.
 7.Pass automated tests.
@@ -103,7 +105,6 @@ privacy and regulatory requirements.
 16.Problem resolution process (troubleshooting) in place
 17.Check that Synthetic transactions/ smoke tests complete
 `
-
 
 
 **Third Part (Optional but a plus):**
