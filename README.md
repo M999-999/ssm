@@ -39,7 +39,11 @@ Our backend stack is:
 - Kafka
 
 
+---
+
 **First Part:**
+
+---
 
 
 Your task is to build  Restful API doing the following:
@@ -57,7 +61,11 @@ Please provide a solution with the  above features with the following considerat
 
 
 
+---
+
 **Second Part (Optional but a plus):**
+
+---
 
 Being concerned about developing high quality, resilient software, giving the fact, that you will be participating, mentoring other engineers in the coding review process.
 
@@ -104,15 +112,53 @@ Being concerned about developing high quality, resilient software, giving the fa
 > 16. Problem resolution process (troubleshooting) in place
 > 17. Check that Synthetic transactions/smoke tests complete
 
+
+---
+
 **Third Part (Optional but a plus):**
+
+---
+
 Another Team in the company is building another service, This service will be used to provide some statistics of the employees, this could be used to list the number of employees per country, other types of statistics which is very vague at the moment.
 
 
 - Please think of a solution without any further implementation that could be able to integrate on top of your service, including the integration pattern will be used, the database storage etc.
 
 A high-level architecture diagram is sufficient to present this.
-+++
-+++
+
+
+his is a very broad question so here are a few of the more useful Design Patterns, you may need to use one or more of these depending on what you are trying to do:
+
+    Adapter - If you want to wrap the 3rd party API with an interface that fits better into the rest of your system.
+            A Must for Vendor & Service Integrations
+            the adapter pattern is used to implement a light wrapper around third-party APIs, one that is contextually relevant for your codebase, and can withstand upstream changes or wholesale replacements of the vendor API without impacting the rest of your application.
+    Facade - If you want to simplify interacting with the 3rd party library by going through some kind of helper class.
+    Bridge - Define a new intermediate interface between your code and the 3rd party library. 
+            This is most useful if the 3rd party library is subject to future changes, any changes will only affect the one class that communicates with this 3rd party library leaving the rest of your system unaffected. The Bridge Pattern is also useful if you need to switch to a different but similar 3rd party library; again making you only change one class.
+
+Using API gateway in design microservices architecture
+
+![](images/api_gateway.png)
+
+When working with REST APIs we must remember to consider security from the start.
+
+![](images/oauth-policy1.png)
+
+OAuth 2.0 authentication can be used to verify linked services to run API requests.
+Using OAuth2 to access the 3rd party API
+OAuth2 flow: The initial request
+The following image shows the OAuth2 flow when you access the SSM API for the first time
+![](images/oauth-first-request.png)
+
+OAuth2 flow: Subsequent requests
+On subsequent requests, you do not need to exchange your credentials for a token. Instead, you can just include the access token you already have, as long as it hasn't expired yet:
+![](images/oauth-subsequent-requests.png)
+
+OAuth2 flow: When your access token expires
+When an access token expires (after f.e. 12 hours), you can use the refresh token to get a new access token:
+![](images/oauth-refresh-token.png)
+---
+
 The application is written for Java 11 and uses an in-memory H2 database, so doesn't require any additional actions to start, except building a jar and execution of the command to start. Also used default port 8080
 
 How to run with Java 11:
