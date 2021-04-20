@@ -131,10 +131,15 @@ his is a very broad question so here are a few of the more useful Design Pattern
 
     Adapter - If you want to wrap the 3rd party API with an interface that fits better into the rest of your system.
             A Must for Vendor & Service Integrations
-            the adapter pattern is used to implement a light wrapper around third-party APIs, one that is contextually relevant for your codebase, and can withstand upstream changes or wholesale replacements of the vendor API without impacting the rest of your application.
+            the adapter pattern is used to implement a light wrapper around third-party APIs, one that is contextually 
+            relevant for your codebase, and can withstand upstream changes or wholesale replacements of the vendor API 
+            without impacting the rest of your application.
     Facade - If you want to simplify interacting with the 3rd party library by going through some kind of helper class.
     Bridge - Define a new intermediate interface between your code and the 3rd party library. 
-            This is most useful if the 3rd party library is subject to future changes, any changes will only affect the one class that communicates with this 3rd party library leaving the rest of your system unaffected. The Bridge Pattern is also useful if you need to switch to a different but similar 3rd party library; again making you only change one class.
+            This is most useful if the 3rd party library is subject to future changes, any changes will only affect 
+            the one class that communicates with this 3rd party library leaving the rest of your system unaffected. 
+            The Bridge Pattern is also useful if you need to switch to a different but similar 3rd party library; 
+            again making you only change one class.
 
 Using API gateway in design microservices architecture
 
@@ -146,16 +151,20 @@ When working with REST APIs we must remember to consider security from the start
 
 OAuth 2.0 authentication can be used to verify linked services to run API requests.
 Using OAuth2 to access the 3rd party API
+
 OAuth2 flow: The initial request
+
 The following image shows the OAuth2 flow when you access the SSM API for the first time
 ![](images/oauth-first-request.png)
 
 OAuth2 flow: Subsequent requests
+
 On subsequent requests, you do not need to exchange your credentials for a token. Instead, you can just include the access token you already have, as long as it hasn't expired yet:
 ![](images/oauth-subsequent-requests.png)
 
 OAuth2 flow: When your access token expires
-When an access token expires (after f.e. 12 hours), you can use the refresh token to get a new access token:
+
+When an access token expires (after fe 12 hours), you can use the refresh token to get a new access token
 ![](images/oauth-refresh-token.png)
 ---
 
