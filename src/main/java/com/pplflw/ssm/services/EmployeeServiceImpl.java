@@ -24,7 +24,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Transactional
     @Override
-    public Employee addNewEmployee(Employee theEmployee) {
+    public Employee addEmployee(Employee theEmployee) {
         theEmployee.setState(EmployeeState.ADDED);
         return theEmployeeRepository.save(theEmployee);
     }
@@ -41,6 +41,22 @@ public class EmployeeServiceImpl implements EmployeeService {
     public StateMachine<EmployeeState, EmployeeEvent> approveEmployee(Long employeeId) {
         StateMachine<EmployeeState, EmployeeEvent> theStateMachine = build(employeeId);
         sendEvent(employeeId,theStateMachine,EmployeeEvent.ACTIVATE);
+        return theStateMachine;
+    }
+
+    @Transactional
+    @Override
+    public StateMachine<EmployeeState, EmployeeEvent> activateEmployee(Long employeeId) {
+        StateMachine<EmployeeState, EmployeeEvent> theStateMachine = build(employeeId);
+        sendEvent(employeeId,theStateMachine,EmployeeEvent.ACTIVATE);
+        return theStateMachine;
+    }
+
+    @Transactional
+    @Override
+    public StateMachine<EmployeeState, EmployeeEvent> deactivateEmployee(Long employeeId) {
+        StateMachine<EmployeeState, EmployeeEvent> theStateMachine = build(employeeId);
+        sendEvent(employeeId,theStateMachine,EmployeeEvent.DECLINE);
         return theStateMachine;
     }
 

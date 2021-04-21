@@ -17,6 +17,7 @@ public class Employee {
     private Long id;
     @Column(unique = true)
     private String name;
+    @Column(unique = true)
     private String email;
     @Enumerated(EnumType.STRING)
     private EmployeeState state;

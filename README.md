@@ -24,7 +24,8 @@ Requirements are:
 
 As a part of our backend engineering team, you will be responsible for building our core platform including an employees management system.
 
-The employees on this system are assigned to different states, Initially when an employee is added it will be assigned "ADDED" state automatically .
+The employees on this system are assigned to different states, 
+Initially when an employee is added it will be assigned "ADDED" state automatically .
 
 
 The other states (State machine) for A given Employee are:

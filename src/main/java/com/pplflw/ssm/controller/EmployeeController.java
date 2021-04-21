@@ -1,61 +1,54 @@
 package com.pplflw.ssm.controller;
 
 
+import com.pplflw.ssm.domain.Employee;
+import com.pplflw.ssm.domain.EmployeeEvent;
+import com.pplflw.ssm.domain.EmployeeState;
 import com.pplflw.ssm.services.EmployeeService;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.statemachine.StateMachine;
+import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
+@Slf4j
 @RestController
+@AllArgsConstructor
+@RequestMapping("/ssm/api/v1")
 public class EmployeeController {
 
-
-
-    private EmployeeService employeeService;
-
-    public EmployeeController(EmployeeService employeeService) {
-        this.employeeService = employeeService;
-    }
-
-    @RequestMapping("/")
+    private final EmployeeService service;
+    @GetMapping("/")
     public String index() {
-        return "EmployeeController . !!!";
+        return "Default EmployeeController started.";
+    }
+    @PostMapping("/create")
+    public Employee createEmployee(@Valid @RequestBody final Employee employee) {
+        return service.addEmployee(employee);
     }
 
-//    @GetMapping("/{employeeId}")
-//    public ResponseEntity<EmployeeDto> getEmployee(@PathVariable("employeeId") UUID employeeId){
-//
-//        return new ResponseEntity<>(employeeService.getEmployeeById(employeeId), HttpStatus.OK);
-//    }
+    @PostMapping("/activate/{empId}")
+    public StateMachine<EmployeeState, EmployeeEvent> activateEmployee(@PathVariable final Long empId) {
+        log.info("Requested activation for Employee with ID {}", empId);
+        return service.activateEmployee(empId);
+    }
 
-//    @PostMapping
-//    public ResponseEntity handlePost(@RequestBody @Valid EmployeeDto employeeDto){
-//        EmployeeDto savedDto = employeeService.saveNewEmployee(employeeDto);
-//
-//        HttpHeaders httpHeaders = new HttpHeaders();
-//        httpHeaders.add("Location", "/api/v1/employee/" + savedDto.getId().toString());
-//
-//        return new ResponseEntity(httpHeaders, HttpStatus.CREATED);
-//    }
-//
-//    @PutMapping("/{employeeId}")
-//    @ResponseStatus(HttpStatus.NO_CONTENT)
-//    public void handleUpdate(@PathVariable("employeeId") UUID employeeId, @Valid @RequestBody EmployeeDto employeeDto){
-//        employeeService.updateEmployee(employeeId, employeeDto);
-//    }
-//
-//    @DeleteMapping("/{employeeId}")
-//    public void deleteById(@PathVariable("employeeId")  UUID employeeId){
-//        employeeService.deleteById(employeeId);
-//    }
-//
-//    @ExceptionHandler(ConstraintViolationException.class)
-//    public ResponseEntity<List> validationErrorHandler(ConstraintViolationException e){
-//        List<String> errors = new ArrayList<>(e.getConstraintViolations().size());
-//
-//        e.getConstraintViolations().forEach(constraintViolation -> {
-//            errors.add(constraintViolation.getPropertyPath() + " : " + constraintViolation.getMessage());
-//        });
-//
-//        return new ResponseEntity<>(errors, HttpStatus.BAD_REQUEST);
-//    }
+    @PostMapping("/check/{empId}")
+    public StateMachine<EmployeeState, EmployeeEvent> inCheckEmployee(@PathVariable final Long empId) {
+        log.info("Requested in-check for Employee with ID {}", empId);
+        return service.checkEmployee(empId);
+    }
+
+    @PostMapping("/approve/{empId}")
+    public StateMachine<EmployeeState, EmployeeEvent> approveEmployee(@PathVariable final Long empId) {
+        log.info("Requested approval for Employee with ID {}", empId);
+        return service.approveEmployee(empId);
+    }
+
+    @PostMapping("/deactivate/{empId}")
+    public StateMachine<EmployeeState, EmployeeEvent> deactivaEmployee(@PathVariable final Long empId) {
+        log.info("Requested approval for Employee with ID {}", empId);
+        return service.deactivateEmployee(empId);
+    }
 }

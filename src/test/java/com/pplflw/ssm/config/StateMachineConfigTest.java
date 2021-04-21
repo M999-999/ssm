@@ -39,7 +39,7 @@ class StateMachineConfigTest {
 
         log.info("theStateMachine.sendEvent(EmployeeEvent.ACTIVATE)() State={}",theStateMachine.getState().toString());
 
-        theStateMachine.sendEvent(EmployeeEvent.DECLINE_ACTIVATE);
+        theStateMachine.sendEvent(EmployeeEvent.DECLINE);
 
         log.info("theStateMachine.sendEvent(EmployeeEvent.DECLINE_ACTIVATE)() State={}",theStateMachine.getState().toString());
 

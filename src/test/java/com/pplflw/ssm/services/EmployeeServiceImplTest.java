@@ -30,7 +30,7 @@ Employee theEmployee;
     @Test
     void checkEmployee() {
         if(theEmployee!=null && theEmployeeService!=null) {
-            Employee theAddedEmployee = theEmployeeService.addNewEmployee(theEmployee);
+            Employee theAddedEmployee = theEmployeeService.addEmployee(theEmployee);
             log.info("===>>>>theAddedEmployee getState()={}",theAddedEmployee.getState());
 
             StateMachine<EmployeeState, EmployeeEvent> theStateMachine
